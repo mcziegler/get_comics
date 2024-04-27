@@ -4,7 +4,7 @@ rm -rf *.gif
 
 DATE=`date +%Y-%m-%d`
 
-for COMICNAME in flash-gordon pajama-diaries mary-worth rex-morgan-m-d mandrake-the-magician phantom between-friends sally-forth zits judge-parker popeye take-it-from-the-tinkersons prince-valiant Olive-Popeye ; do
+for COMICNAME in flash-gordon pajama-diaries mary-worth rex-morgan-m-d mandrake-the-magician phantom between-friends sally-forth zits judge-parker popeye take-it-from-the-tinkersons prince-valiant Olive-Popeye hagar-the-horrible ; do
 
 	RAWOUTPUT=`wget -q -O - "https://comicskingdom.com/${COMICNAME}/${DATE}"`
 	FILENAME=`echo "$RAWOUTPUT" | sed 's/>/>\n/g' | sed 's/,/,\n/g' | grep og:image | head -n 1 | awk -F '"' '{print $4}'`
